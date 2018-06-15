@@ -15,5 +15,3 @@ module.exports = hyphencase = (str) => {
    let res = str.toLowerCase();
    return res = res.replace(/[._ ]/g, '-');
 };
-
-console.log(hyphencase('Co to jest cholera_jasna_Ciasna_I_DO_DIASKA  '))
