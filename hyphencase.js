@@ -29,6 +29,4 @@ module.exports = hyphencase = (str) => {
 
    let res = str.toLowerCase();
    return signreducer(res.trim().replace(/[._ ]/g, '-'), '-');
-};
-
-console.log(hyphencase('     5123JsksKqoweK                qjweh    123wqwe  zxc asd qwe    '));
+}
