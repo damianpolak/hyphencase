@@ -12,6 +12,23 @@
 module.exports = hyphencase = (str) => {
    'use strict';
 
+   // Signreducer function needed to reduce the characters between words
+   // https://github.com/damianpolak/signreducer
+   let signreducer = (str, char) => {
+      'use strict';
+
+      let a = str.split(char);
+      let newStr = "";
+      for(let i = 0; i <= a.length - 1; i++) {
+        if((a[i] != null) && (a[i] != '')) {
+          newStr += a[i]+char;
+        }
+      }
+      return newStr.slice(0, newStr.length - 1);
+   }
+
    let res = str.toLowerCase();
-   return res = res.replace(/[._ ]/g, '-');
+   return signreducer(res.trim().replace(/[._ ]/g, '-'), '-');
 };
+
+console.log(hyphencase('     5123JsksKqoweK                qjweh    123wqwe  zxc asd qwe    '));
